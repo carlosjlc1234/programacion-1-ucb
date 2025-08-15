@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Página Profesional</title>
+  <style>
+    :root {
+      --color-primario: #FFD527;
+      --color-secundario: #052845;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    /* Cabecera */
+    header {
+      background-color: var(--color-secundario);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    /* Contenido principal */
+    main {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    button {
+      background-color: var(--color-primario);
+      color: var(--color-secundario);
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #e6c120;
+    }
+
+    /* Pie de página */
+    footer {
+      background-color: var(--color-secundario);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Responsividad */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+      main {
+        padding: 1rem;
+      }
+      button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mi Página Profesional</h1>
+  </header>
+
+  <main>
+    <h2>Bienvenido</h2>
+    <p>Haz clic en el botón para ejecutar "mi primer algoritmo".</p>
+    <button onclick="miPrimerAlgoritmo()">Ejecutar Algoritmo</button>
+  </main>
+
+  <footer>
+    &copy; 2025 - Desarrollado por Carlos | Todos los derechos reservados
+  </footer>
+
+  <script>
+    function miPrimerAlgoritmo() {
+      alert("Hola, este es mi primer algoritmo ejecutado desde un botón.");
+    }
+  </script>
+  <!-- Luego podrás vincular aprendiendo.js -->
+  <!-- <script src="aprendiendo.js"></script> -->
+
+</body>
+</html>
