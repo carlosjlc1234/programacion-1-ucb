@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Analizador de Texto | Programación 1</title>
+  <meta name="description" content="Página responsive para contar vocales, palabras y caracteres usando funciones definidas en cadenas.js." />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Cabecera profesional -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true">A</div>
+        <div class="brand__text">
+          <h1 class="brand__title">Analizador de Texto</h1>
+          <p class="brand__subtitle">Programación 1 · Práctica de cadenas</p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Principal">
+        <a href="#" class="nav__link">Inicio</a>
+        <a href="#" class="nav__link">Documentación</a>
+        <a href="#" class="nav__link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main">
+    <div class="container">
+      <section class="card">
+        <h2 class="card__title">Ingresa tu texto</h2>
+        <p class="card__desc">Las funciones <code>ContarVocales</code>, <code>ContarPalabras</code> y <code>ContarCaracteres</code> se cargan desde <strong>cadenas.js</strong>. Presiona “Analizar” o activa el análisis en vivo.</p>
+
+        <div class="input-group">
+          <label for="textInput" class="label">Texto a analizar</label>
+          <input id="textInput" class="input" type="text" placeholder="Escribe aquí..." autocomplete="off" />
+        </div>
+
+        <div class="actions">
+          <button id="analyzeBtn" class="btn btn--primary" type="button">Analizar</button>
+
+          <label class="switch">
+            <input id="liveToggle" type="checkbox" />
+            <span class="slider" aria-hidden="true"></span>
+            <span class="switch__label">Análisis en vivo</span>
+          </label>
+        </div>
+
+        <div class="results" role="status" aria-live="polite">
+          <div class="stat">
+            <span class="stat__label">Vocales</span>
+            <span id="vowelsOut" class="stat__value">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Palabras</span>
+            <span id="wordsOut" class="stat__value">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Caracteres</span>
+            <span id="charsOut" class="stat__value">0</span>
+          </div>
+        </div>
+
+        <div id="statusBar" class="status status--warning" hidden>
+          <strong>Advertencia:</strong> No se encontraron las funciones en <code>cadenas.js</code>. Verifica que el archivo esté incluido y que las funciones existan en el ámbito global.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Pie de página profesional -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© <span id="year"></span> Analizador de Texto — Hecho para Programación 1</p>
+      <ul class="footer__links">
+        <li><a href="#" class="footer__link">Términos</a></li>
+        <li><a href="#" class="footer__link">Privacidad</a></li>
+        <li><a href="#" class="footer__link">Ayuda</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Tu archivo con las funciones: NO lo definimos aquí -->
+  <script src="cadenas.js"></script>
+
+  <!-- Lógica de la página (invoca a las funciones de cadenas.js) -->
+  <script src="app.js"></script>
+</body>
+</html>
