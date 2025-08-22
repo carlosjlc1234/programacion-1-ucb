@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procesador de Cadenas</title>
+  <style>
+    :root {
+      --color-primario: #FFCF15;
+      --color-secundario: #00477A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: var(--color-secundario);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      color: var(--color-secundario);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid var(--color-secundario);
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--color-primario);
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      margin-bottom: 1.5rem;
+    }
+
+    button:hover {
+      background: #e0b913;
+    }
+
+    .resultados {
+      text-align: left;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      font-size: 1rem;
+    }
+
+    footer {
+      background: var(--color-secundario);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Procesador de Cadenas</h1>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Ingresa un texto</h2>
+      <input type="text" id="texto" placeholder="Escribe aquí tu texto...">
+
+      <button onclick="ejecutarTodo()">Procesar Texto</button>
+
+      <div class="resultados" id="resultado">
+        <p><strong>Vocales:</strong> 0</p>
+        <p><strong>Palabras:</strong> 0</p>
+        <p><strong>Caracteres:</strong> 0</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 - Proyecto de Algoritmos con JS
+  </footer>
+
+  <!-- Importar tus funciones -->
+  <script src="cadenas.js"></script>
+
+  <!-- Script para conectar con el HTML -->
+  <script>
+    function ejecutarTodo(){
+      const texto = document.getElementById("texto").value;
+
+      const vocales = ContarVocales(texto);
+      const palabras = ContarPalabras(texto);
+      const caracteres = ContarCaracteres(texto);
+
+      document.getElementById("resultado").innerHTML = `
+        <p><strong>Vocales:</strong> ${vocales}</p>
+        <p><strong>Palabras:</strong> ${palabras}</p>
+        <p><strong>Caracteres:</strong> ${caracteres}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
